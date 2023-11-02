@@ -10,17 +10,23 @@ $('#currentTime').text(time);
 var hour = dayjs().hour()
 console.log(hour)
 var hourName = "hour-" + hour 
-// If (hour ) { 
-// }
-// if the hour (whatever it is) is greater than what the current hour is then future()
-// if the hour is less than what the current hour is then past 
-
-// else, past 
-
 console.log("hi" + hourName)
 var hour2= document.getElementById(hourName)
 console.log(hour2)
 hour2.className="row time-block present"
+
+for (i = 9; i <= 15; i++) {
+  var hourName = "hour-" + i;
+  var hourElement= document.getElementById(hourName)
+
+  if(hour > i) {
+    document.getElementById(hourName).style.color = ".future";
+  } else if(hour < i) {
+    document.getElementById(hourName).style.color = "past";
+  } else {
+    document.getElementById(hourName).style.color = ".present";
+  }
+}
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
