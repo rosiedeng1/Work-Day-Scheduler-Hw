@@ -9,24 +9,44 @@ $('#currentTime').text(time);
 
 var hour = dayjs().hour()
 console.log(hour)
-var hourName = "hour-" + hour 
-console.log("hi" + hourName)
-var hour2= document.getElementById(hourName)
-console.log(hour2)
-hour2.className="row time-block present"
+// var hourName = "hour-" + hour 
+// console.log("hi" + hourName)
+// var hour2= document.getElementById(hourName)
+// console.log(hour2)
+// hour2.className="row time-block present"
 
-for (i = 9; i <= 15; i++) {
+
+for (i = 9; i <= 17; i++) {
   var hourName = "hour-" + i;
   var hourElement= document.getElementById(hourName)
 
   if(hour > i) {
-    document.getElementById(hourName).style.color = ".future";
+    document.getElementById(hourName).className="row time-block past"
   } else if(hour < i) {
-    document.getElementById(hourName).style.color = "past";
+    document.getElementById(hourName).className="row time-block future"
   } else {
-    document.getElementById(hourName).style.color = ".present";
+    document.getElementById(hourName).className="row time-block present"
   }
 }
+
+function saveActivity () {
+const saveButtons = document.querySelectorAll(".saveBtn");
+console.log(saveButtons)
+for (const btn of saveButtons) {
+  btn.addEventListener("click", function() {
+    // console.log("click")
+    var content = btn.previousElementSibling.textContent
+    console.log(content)
+  }) 
+} 
+}
+
+// Calls function
+saveActivity ()
+
+// var save = document.getElementById("save");
+// console.log("hi " + save)
+// save.addEventListener("click",);
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -65,4 +85,4 @@ $(function () {
     // TODO: Add code to display the current date in the header of the page.
   });
   
-  var event = JSON.parse(localstorage.getItem("event"))
+  // var event = JSON.parse(localstorage.getItem("event"))
