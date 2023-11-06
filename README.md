@@ -6,8 +6,8 @@ The purpose of this project was to create a work day schedule for users so that 
 
 ## Usage
 
-![TimeBlock](assets/images/TimeBlock.png)
-![InputActivity.LocalStorage](assets/images/InputActivity.LocalStorage.png)
+![TimeBlock](Assets/Images/TimeBlock.png)
+![InputActivity.LocalStorage](Assets/Images/InputActivity.LocalStorage.png)
 
 Instructions for ![TimeBlock]: When you type an event into the current time block you are in (in this case 9am), you can click on the blue button after you've written your event to save that event. The green at 10am shows the future time. 
 Instructions for ![InputAcitivity.LocalStorage]: After you've saved your event, you can see in the application tab that the event has been saved to the local storage and now persists. 
