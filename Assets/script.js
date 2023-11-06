@@ -15,7 +15,7 @@ console.log(hour)
 // console.log(hour2)
 // hour2.className="row time-block present"
 
-
+// Created a forloop for the hours between 9am-5pm
 for (i = 9; i <= 17; i++) {
   var hourName = "hour-" + i;
   var hourElement= document.getElementById(hourName)
@@ -35,11 +35,28 @@ console.log(saveButtons)
 for (const btn of saveButtons) {
   btn.addEventListener("click", function() {
     // console.log("click")
-    var content = btn.previousElementSibling.textContent
-    console.log(content)
+    var content = btn.previousElementSibling.value
+    var key = btn.parentElement.id
+    console.log(content, key)
+    // var activities = JSON.parse(localStorage.getItem('activities')) || {}
+    // activities[key]=content
+    // localStorage.setItem('activities', JSON.stringify(activities))
+
+
+  localStorage.setItem(key,content)
   }) 
 } 
 }
+function renderActivity() {
+  const textAreas = document.querySelectorAll('.description')
+  for (const textArea of textAreas) {
+    var key = textArea.parentElement.id
+    textArea.textContent = localStorage.getItem(key)
+  }
+}
+
+renderActivity()
+
 
 // Calls function
 saveActivity ()
