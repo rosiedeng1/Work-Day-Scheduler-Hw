@@ -9,14 +9,13 @@ $(function () {
   $('#currentTime').text(time);
 
   var hour = dayjs().hour()
-  console.log(hour)
+  // console.log(hour)
 
   // Created a forloop for the hours between 9am-5pm
   for (i = 9; i <= 17; i++) {
     // Creates variable for the hour
     var hourName = "hour-" + i;
-    var hourElement = document.getElementById(hourName)
-
+    
     // If the hour is past 5pm then it is identified by the "past" class
     if (hour > i) {
       document.getElementById(hourName).className = "row time-block past"
