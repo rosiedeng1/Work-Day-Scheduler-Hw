@@ -9,7 +9,7 @@ $(function () {
   $('#currentTime').text(time);
 
   var hour = dayjs().hour()
-  console.log(hour)
+  // console.log(hour)
 
   // Created a forloop for the hours between 9am-5pm
   for (i = 9; i <= 17; i++) {
